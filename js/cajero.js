@@ -43,7 +43,7 @@ const escuchaEventoIngresar = (datosUsuario) => {
     // var res = saldo + InputNumber;
     // console.log(res)
     elementoPadre.addEventListener("click", (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log("click")
         if(event.target.tagName === "BUTTON" && event.target.classList.contains("btn-success")){
             
@@ -57,5 +57,4 @@ const escuchaEventoIngresar = (datosUsuario) => {
         };
         datosUsuario();
     });
-    
 }
