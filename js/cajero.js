@@ -61,7 +61,7 @@ const escuchaEventoIngresar = (datoUsuario) => {
                         icon: 'success',
                         title: 'Monto ingresado correctamente. Consulte saldo',
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 500
                       })
                     //   document.getElementById("InputNumber").value = "";
                     // alert("Monto ingresado correctamente. Consulte saldo")
@@ -101,9 +101,9 @@ const escuchaEventoRetirar = (datoUsuario) => {
                         icon: 'success',
                         title: 'Retiro Existoso. Consulte saldo',
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 500
                       })
-                    //   document.getElementById("InputNumber").value = "";
+                    document.getElementById("InputNumber").value = "";
                     // alert("Retiro Existoso. Consulte saldo")
                 }else{
                     event.preventDefault()
@@ -132,6 +132,7 @@ const escuchaEventoInput = () => {
 const FunLogout = () => {
     const cerrar = document.getElementById("elementdad");
     cerrar.addEventListener("click", (event) => {
+        event.preventDefault();
         if(event.target.tagName === "BUTTON" && event.target.classList.contains("btn-outline-success")){
             console.log(event.target.classList)
             window.location.href = './index.html'
