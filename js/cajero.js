@@ -4,6 +4,7 @@ if(localStorage.getItem('usuario') == null) {
 
 window.addEventListener('load', function() {
     datosUsuario();
+    FunLogout();
 })
 
 function datosUsuario(){
@@ -62,6 +63,7 @@ const escuchaEventoIngresar = (datoUsuario) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
+                    //   document.getElementById("InputNumber").value = "";
                     // alert("Monto ingresado correctamente. Consulte saldo")
                 }else{
                     event.preventDefault()
@@ -101,6 +103,7 @@ const escuchaEventoRetirar = (datoUsuario) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
+                    //   document.getElementById("InputNumber").value = "";
                     // alert("Retiro Existoso. Consulte saldo")
                 }else{
                     event.preventDefault()
@@ -123,5 +126,15 @@ const escuchaEventoInput = () => {
             evento.preventDefault();
             return false;
         }
+    });
+}
+
+const FunLogout = () => {
+    const cerrar = document.getElementById("elementdad");
+    cerrar.addEventListener("click", (event) => {
+        if(event.target.tagName === "BUTTON" && event.target.classList.contains("btn-outline-success")){
+            console.log(event.target.classList)
+            window.location.href = './index.html'
+        };
     });
 }
